@@ -100,34 +100,49 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss">
+@use '../styles/variables' as v;
+@use '../styles/mixins' as m;
+@use '../styles/utilities' as u;
+@use '../styles/components' as c;
+
 .anonymization-content {
-  display: flex;
-  flex-direction: column;
+  @include m.flex-column;
+  @include m.container;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 20px; 
-  max-width: 900px; 
-  width: 100%;
-  margin: 0 auto;
+  padding: v.$spacing-lg;
   margin-top: 60px;
-  padding-right: 300px;
+
+  @include m.mobile {
+    margin-top: v.$spacing-lg;
+    padding: v.$spacing-md;
+  }
 }
 
 .upload-steps {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 30px;
+  @include m.flex-center;
+  gap: v.$spacing-lg;
+  margin-bottom: v.$spacing-xl;
+  flex-wrap: wrap;
+
+  @include m.mobile {
+    gap: v.$spacing-md;
+    margin-bottom: v.$spacing-lg;
+  }
 }
 
 .step {
-  display: flex;
-  flex-direction: column;
+  @include m.flex-column;
   align-items: center;
-  font-size: 18px;
-  color: #333;
+  font-size: v.$font-size-md;
+  color: v.$text-color;
+
+  @include m.mobile {
+    font-size: v.$font-size-sm;
+    min-width: 100px;
+  }
 }
 
 .bold-text {
@@ -137,68 +152,89 @@ export default {
 .step-icon {
   width: 40px;
   height: 40px;
-  margin-bottom: 5px;
+  margin-bottom: v.$spacing-xs;
+
+  @include m.mobile {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .arrow-icon {
   width: 24px;
   height: 24px;
+
+  @include m.mobile {
+    width: 16px;
+    height: 16px;
+  }
+
+  @include m.tablet {
+    transform: rotate(90deg);
+  }
 }
 
 .upload-box {
-  background: white;
+  background: v.$white;
   border-radius: 10px;
-  padding: 40px; 
+  padding: v.$spacing-xl;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 700px; 
   width: 100%;
+  max-width: 700px;
+
+  @include m.mobile {
+    padding: v.$spacing-lg;
+  }
+
+  h2 {
+    @include m.mobile {
+      font-size: v.$font-size-lg;
+    }
+  }
 }
 
 .drop-zone {
-  border: 2px dashed #ccc;
+  border: 2px dashed v.$gray;
   border-radius: 8px;
-  padding: 30px;
+  padding: v.$spacing-xl;
   text-align: center;
-  margin-top: 10px;
+  margin-top: v.$spacing-sm;
   font-weight: 500;
-  font-size: 22px;
-  font-family: 'Montserrat', sans-serif;
-}
+  font-size: v.$font-size-lg;
+  font-family: v.$primary-font;
 
-.drop-zone.drag-over {
-  background-color: #f0f0f0;
-}
+  @include m.mobile {
+    padding: v.$spacing-lg;
+    font-size: v.$font-size-md;
+  }
 
+  &.drag-over {
+    background-color: v.$background-color;
+  }
+}
 
 .or-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 15px 0;
-  font-family: 'Montserrat', sans-serif;
+  @include m.flex-center;
+  margin: v.$spacing-md 0;
+  font-family: v.$primary-font;
 }
 
 .or-text {
-  color: gray;
+  color: v.$gray;
   position: relative;
-  z-index: 7; 
-  margin-bottom: 5px;
-  padding: 0 10px; 
+  z-index: 7;
+  margin-bottom: v.$spacing-xs;
+  padding: 0 v.$spacing-sm;
 }
 
 .browse-button {
-  background: #3865F2;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 20px;
-  border-radius: 25px;
-  cursor: pointer;
-  margin-top: 5px;
-}
+  @extend .button;
+  margin-top: v.$spacing-xs;
 
-.browse-button:hover {
-  background: #2f55d4;
+  @include m.mobile {
+    font-size: v.$font-size-sm;
+    padding: v.$spacing-xs v.$spacing-md;
+  }
 }
 </style>
 

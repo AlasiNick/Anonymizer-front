@@ -1,34 +1,137 @@
 <template>
   <BaseLayout>
-    <h1>Home Page</h1>
+    <div class="home">
+      <div class="welcome-section">
+        <h1>Welcome to CyberWiseSpace</h1>
+        <p class="subtitle">Your secure data processing platform</p>
+      </div>
+
+      <div class="quick-actions">
+        <h2>Quick Actions</h2>
+        <div class="action-cards">
+          <router-link to="/anonymize" class="action-card">
+            <img src="../assets/dataprocessing.svg" alt="Anonymize" class="card-icon" />
+            <h3>Anonymize Data</h3>
+            <p>Securely anonymize your sensitive data</p>
+          </router-link>
+
+          <router-link to="/pseudonymize" class="action-card">
+            <img src="../assets/dataprocessing.svg" alt="Pseudonymize" class="card-icon" />
+            <h3>Pseudonymize Data</h3>
+            <p>Create reversible data masks</p>
+          </router-link>
+
+          <router-link to="/projects" class="action-card">
+            <img src="../assets/dataprocessing.svg" alt="Projects" class="card-icon" />
+            <h3>My Projects</h3>
+            <p>View and manage your projects</p>
+          </router-link>
+        </div>
+      </div>
+    </div>
   </BaseLayout>
 </template>
+
 <script>
 import BaseLayout from '../layouts/BaseLayout.vue';
+
 export default {
   name: "Home",
-  components: { BaseLayout },
+  components: {
+    BaseLayout
+  }
 };
 </script>
   
-  <style scoped>
-  .home-content {
-    text-align: center;
+<style scoped>
+.home {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.quick-actions {
+  margin-top: 40px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.action-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.action-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: #3865F2;
+  }
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+p {
+  color: #666;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .home {
     padding: 20px;
   }
-  
+
   h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 48px;
-    color: #333;
+    font-size: 2rem;
   }
-  
-  p {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-    color: #666;
-    margin-top: 20px;
+
+  .action-cards {
+    grid-template-columns: 1fr;
   }
-  </style>
+}
+</style>
