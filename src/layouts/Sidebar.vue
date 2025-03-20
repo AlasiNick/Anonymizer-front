@@ -22,6 +22,10 @@
     </div>
     
     <router-link to="/risk-assessment" class="section-title">Risk assessment</router-link>
+
+    <div class="copyright">
+      © {{ currentYear }} CyberWise. All rights reserved.
+    </div>
   </div>
   <button 
     class="mobile-toggle" 
@@ -39,7 +43,8 @@ export default {
   name: "Sidebar",
   data() {
     return {
-      isCollapsed: false
+      isCollapsed: false,
+      currentYear: new Date().getFullYear()
     };
   },
   watch: {
@@ -289,6 +294,24 @@ export default {
 
   &:hover {
     text-decoration: solid;
+  }
+}
+
+.copyright {
+  margin-top: 20px;
+  padding-top: 20px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px;
   }
 }
 </style>

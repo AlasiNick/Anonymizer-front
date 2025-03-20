@@ -3,7 +3,7 @@
     <div class="projects">
       <div class="header">
         <h1>My Projects</h1>
-        <button class="new-project-btn" @click="createNewProject">
+        <button class="new-project-btn" @click="showCreateModal = true">
           <span class="icon">+</span>
           New Project
         </button>
@@ -35,7 +35,7 @@
         <img src="../assets/empty-projects.svg" alt="No projects" class="empty-icon" />
         <h2>No Projects Yet</h2>
         <p>Create your first project to start managing your data processing tasks</p>
-        <button class="new-project-btn" @click="createNewProject">
+        <button class="new-project-btn" @click="showCreateModal = true">
           <span class="icon">+</span>
           Create Project
         </button>
@@ -78,27 +78,21 @@ export default {
     formatDate(date) {
       return new Date(date).toLocaleDateString()
     },
-    createNewProject() {
-      // TODO: Implement project creation
-      console.log('Creating new project')
-    },
     viewProject(id) {
-      // TODO: Implement project view
       console.log('Viewing project:', id)
     },
     editProject(id) {
-      // TODO: Implement project edit
       console.log('Editing project:', id)
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .projects {
-  padding: 40px;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .header {

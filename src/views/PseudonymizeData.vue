@@ -73,7 +73,7 @@
 import BaseLayout from '../layouts/BaseLayout.vue';
 
 export default {
-  name: 'Pseudonymize',
+  name: 'PseudonymizeData',
   components: {
     BaseLayout
   },
@@ -104,34 +104,33 @@ export default {
       return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
     },
     processPseudonymization() {
-      // TODO: Implement pseudonymization process
       console.log('Starting pseudonymization for files:', this.uploadedFiles);
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .pseudonymize {
-  padding: 40px;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .header {
   text-align: center;
   margin-bottom: 40px;
-}
 
-h1 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 12px;
-}
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 12px;
+  }
 
-.subtitle {
-  font-size: 1.2rem;
-  color: #666;
+  .subtitle {
+    font-size: 1.2rem;
+    color: #666;
+  }
 }
 
 .upload-section {
@@ -139,6 +138,10 @@ h1 {
   grid-template-columns: 3fr 2fr;
   gap: 24px;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .upload-card {
@@ -152,18 +155,27 @@ h1 {
   &:hover {
     border-color: #3865F2;
   }
-}
 
-.upload-icon {
-  width: 64px;
-  height: 64px;
-  margin-bottom: 24px;
-}
+  .upload-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 24px;
+  }
 
-h2 {
-  font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 12px;
+  h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 12px;
+  }
+
+  p {
+    color: #666;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 24px;
+  }
 }
 
 .file-input {
@@ -182,7 +194,6 @@ h2 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 24px;
   transition: all 0.3s ease;
 
   &:hover {
@@ -227,6 +238,10 @@ h2 {
       }
     }
   }
+
+  @media (max-width: 768px) {
+    padding: 24px;
+  }
 }
 
 .supported-formats {
@@ -241,15 +256,15 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-}
 
-.tag {
-  background: #F5F8FF;
-  color: #3865F2;
-  padding: 4px 12px;
-  border-radius: 16px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  .tag {
+    background: #F5F8FF;
+    color: #3865F2;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
 }
 
 .files-section {
@@ -257,6 +272,16 @@ h2 {
   border-radius: 16px;
   padding: 32px;
   border: 1px solid #eee;
+  margin-top: 24px;
+
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 24px;
+  }
 }
 
 .files-list {
@@ -279,16 +304,16 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 4px;
-}
 
-.file-name {
-  font-weight: 500;
-  color: #333;
-}
+  .file-name {
+    font-weight: 500;
+    color: #333;
+  }
 
-.file-size {
-  font-size: 0.9rem;
-  color: #666;
+  .file-size {
+    font-size: 0.9rem;
+    color: #666;
+  }
 }
 
 .remove-btn {
@@ -326,28 +351,6 @@ h2 {
   &:hover {
     background: #2851D8;
     transform: translateY(-2px);
-  }
-}
-
-@media (max-width: 768px) {
-  .pseudonymize {
-    padding: 20px;
-  }
-
-  .upload-section {
-    grid-template-columns: 1fr;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  .upload-card {
-    padding: 24px;
-  }
-
-  .info-card {
-    padding: 24px;
   }
 }
 
