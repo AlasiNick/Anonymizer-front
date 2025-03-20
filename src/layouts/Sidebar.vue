@@ -6,25 +6,29 @@
     
     <router-link to="/" class="sidebar-item">
       <img src="../assets/home.svg" alt="Home" class="icon" />
-      <span class="icon-text">Home</span>
+      <span class="icon-text">{{ $t('home') }}</span>
     </router-link>
     
     <div class="data-processing">
       <div class="sidebar-item-data">
         <img src="../assets/dataprocessing.svg" alt="Data processing" class="icon" />
-        <span class="icon-text">Data Processing</span>
+        <span class="icon-text">{{ $t('deintify') }}</span>
       </div>
       <div class="sub-items">
-        <router-link to="/anonymize" class="sub-item">Anonymize data</router-link>
-        <router-link to="/pseudonymize" class="sub-item">Pseudonymize data</router-link>
-        <router-link to="/projects" class="sub-item">My projects</router-link>
+        <router-link to="/anonymize" class="sub-item">{{ $t('anonymize') }}</router-link>
+        <router-link to="/pseudonymize" class="sub-item">{{ $t('pseudonymize') }}</router-link>
+        <router-link to="/projects" class="sub-item">{{ $t('projects') }}</router-link>
       </div>
     </div>
     
-    <router-link to="/risk-assessment" class="section-title">Risk assessment</router-link>
+    <router-link to="/risk-assessment" class="section-title">{{ $t('riskAssessment') }}</router-link>
+
+    <div class="settings-section">
+      <LanguageSwitcher />
+    </div>
 
     <div class="copyright">
-      © {{ currentYear }} CyberWise. All rights reserved.
+      © {{ currentYear }} CyberWise. {{ $t('allRightsReserved') }}
     </div>
   </div>
   <button 
@@ -39,8 +43,13 @@
 </template>
 
 <script>
+import LanguageSwitcher from '../components/LanguageSwitcher.vue';
+
 export default {
   name: "Sidebar",
+  components: {
+    LanguageSwitcher
+  },
   data() {
     return {
       isCollapsed: false,
@@ -297,21 +306,41 @@ export default {
   }
 }
 
+.settings-section {
+  margin-top: auto;
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  bottom: 80px;
+  width: calc(450px - 40px);
+
+  @media (max-width: 950px) {
+    width: calc(100% - 40px);
+  }
+}
+
 .copyright {
-  margin-top: 20px;
-  padding-top: 20px;
+  position: fixed;
+  bottom: 0;
+  width: calc(450px - 40px);
+  margin-top: 0;
+  padding: 20px;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.7);
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  padding-bottom: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media (max-width: 950px) {
+    width: calc(100% - 40px);
+  }
 
   @media (max-width: 768px) {
     font-size: 12px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-top: 15px;
+    padding: 15px 20px;
   }
 }
 </style>

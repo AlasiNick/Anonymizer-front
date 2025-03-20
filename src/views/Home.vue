@@ -2,29 +2,29 @@
   <BaseLayout>
     <div class="home">
       <div class="welcome-section">
-        <h1>Welcome to CyberWiseSpace</h1>
-        <p class="subtitle">Your secure data processing platform</p>
+        <h1>{{ $t('welcome') }}</h1>
+        <p class="subtitle">{{ $t('platformSubtitle') }}</p>
       </div>
 
       <div class="quick-actions">
-        <h2>Quick Actions</h2>
+        <h2>{{ $t('quickActions') }}</h2>
         <div class="action-cards">
           <router-link to="/anonymize" class="action-card">
             <img src="../assets/dataprocessing.svg" alt="Anonymize" class="card-icon" />
-            <h3>Anonymize Data</h3>
-            <p>Securely anonymize your sensitive data</p>
+            <h3>{{ $t('anonymizeData') }}</h3>
+            <p>{{ $t('anonymizeDescription') }}</p>
           </router-link>
 
           <router-link to="/pseudonymize" class="action-card">
             <img src="../assets/dataprocessing.svg" alt="Pseudonymize" class="card-icon" />
-            <h3>Pseudonymize Data</h3>
-            <p>Create reversible data masks</p>
+            <h3>{{ $t('pseudonymize') }}</h3>
+            <p>{{ $t('pseudonymizeDescription') }}</p>
           </router-link>
 
           <router-link to="/projects" class="action-card">
             <img src="../assets/dataprocessing.svg" alt="Projects" class="card-icon" />
-            <h3>My Projects</h3>
-            <p>View and manage your projects</p>
+            <h3>{{ $t('projects') }}</h3>
+            <p>{{ $t('projectsDescription') }}</p>
           </router-link>
         </div>
       </div>

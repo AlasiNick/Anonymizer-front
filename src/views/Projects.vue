@@ -2,8 +2,8 @@
   <BaseLayout>
     <div class="projects">
       <div class="header">
-        <h1>My Projects</h1>
-        <button class="new-project-btn" @click="showCreateModal = true">
+          <h1>{{ $t('projects') }}</h1>
+          <button class="new-project-btn" @click="showCreateModal = true">
           <span class="icon">+</span>
           New Project
         </button>
