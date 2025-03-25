@@ -34,8 +34,10 @@ Page preview:
 
 ## Pseudonymization Page:
 
+| PC View | Tablet View |
+|--------|-------------|
 | ![PC](photos/pseudonym.png) | ![Tablet](photos/pseudonym_tablet.png) |
 
 ## Project Page:
 
-![](photos/projects.png)
+![projects](photos/projects.png)
