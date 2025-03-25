@@ -24,7 +24,7 @@ or
 pnpm dev
 ```
 
-Page preview:
+# Page Preview:
 
 ## Main Page:
 | English Version | Estonian Version |
