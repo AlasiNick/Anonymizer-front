@@ -30,7 +30,7 @@ export default {
   @include m.container;
   align-items: center;
   padding: v.$spacing-lg;
-  margin-top: 60px;
+  margin-top: 100px;
 
   @include m.mobile {
     margin-top: v.$spacing-lg;

@@ -23,3 +23,19 @@ or
 ```bash
 pnpm dev
 ```
+
+Page preview:
+
+## Main Page:
+| English Version | Estonian Version |
+|-----------------|------------------|
+| ![EN](photos/main_page.png) | ![EST](photos/main_page_est.png) |
+
+
+## Pseudonymization Page:
+
+| ![PC](photos/pseudonym.png) | ![Tablet](photos/pseudonym_tablet.png) |
+
+## Project Page:
+
+![](photos/projects.png)
